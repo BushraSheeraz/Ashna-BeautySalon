@@ -1,0 +1,54 @@
+﻿@model IEnumerable<BeautySalon.Models.Service>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="align-items-center border-bottom d-flex justify-content-between pt-3 px-5 py-1">
+    <h3> Services</h3>
+    <button class="btn btn-outline-white py-2 px-4">
+        @Html.ActionLink("Create New", "Create")
+    </button>
+</div>
+
+
+<div class="container table-responsive py-5">
+    <table class="table table-bordered table-hover">
+        <thead class="table-head" style="background-color: #fa5bdd; color: white">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceCharges)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category.category1)
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceCharges)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.category1)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.ServiceId }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.ServiceId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.ServiceId })
+                </td>
+            </tr>
+}
+
+    </table>
+
+</div>

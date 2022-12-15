@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BeautySalon.Models.Appointment>
+
+@{
+    ViewBag.Title = "MyAppointments";
+}
+
+<div class="align-items-center border-bottom d-flex justify-content-between pt-3 px-5 py-1">
+    <h3> Appoinments</h3>
+    <button class="btn btn-outline-white py-2 px-4">
+        @Html.ActionLink("Create New", "Create")
+    </button>
+</div>
+
+<div class="container table-responsive py-5">
+    <table class="table table-bordered table-hover">
+        <thead class="table-head" style="background-color: #fa5bdd; color: white">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ap_Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Service.ServiceName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Service.ServiceCategory)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Service.ServiceCharges)
+                </th>
+            </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ap_Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Service.ServiceName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Service.Category.category1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Service.ServiceCharges)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Ap_Id }) |
+                        
+                    </td>
+                </tr>
+            }
+
+    </table>
+
+</div>
+

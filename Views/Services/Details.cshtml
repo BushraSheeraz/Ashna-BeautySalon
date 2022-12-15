@@ -1,0 +1,61 @@
+﻿@model BeautySalon.Models.Service
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="align-items-center border-bottom d-flex justify-content-between pt-3 px-5 py-1">
+    <h3>Details</h3>
+    
+</div>
+
+<div>
+    
+
+    <div class="align-items-center d-flex justify-content-center p-5">
+        <div class="col-12 col-sm-6 col-xl-3 px-3">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-header" style="background-color: #fa5bdd; color: white">
+                        <h4>Service</h4>
+                    </div>
+                    <div class="card-body">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ServiceName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ServiceName)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ServiceCharges)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ServiceCharges)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Category.category1)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Category.category1)
+                            </dd>
+
+                        </dl>
+                    </div>
+                    <div class="d-flex justify-content-center pb-3">
+                        <button class="btn btn-outline-white py-2 px-4">@Html.ActionLink("Edit", "Edit", new { id = Model.ServiceId })</button> 
+                        <button class="btn btn-outline-white py-2 px-4">@Html.ActionLink("Back to List", "Index")</button>
+                    </div>
+
+                </div>
+            </div>
+         </div>
+     </div>
+                       
+                    </div>
+                   
